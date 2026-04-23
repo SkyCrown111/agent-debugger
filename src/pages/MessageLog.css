@@ -1,0 +1,62 @@
+/* Message Log Page 样式 */
+.message-log-page {
+  animation: fadeIn 0.3s ease;
+}
+
+.log-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+.message-list {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.message-item {
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  background: #0d1117;
+  border-left: 3px solid #30363d;
+}
+
+.message-item.thought {
+  border-left-color: #faad14;
+}
+
+.message-item.tool {
+  border-left-color: #1890ff;
+}
+
+.message-item.token {
+  border-left-color: #52c41a;
+}
+
+.message-item.error {
+  border-left-color: #ff4d4f;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.message-header .category {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #8b949e;
+}
+
+.message-header .time {
+  font-size: 12px;
+  color: #6e7681;
+}
+
+.message-content pre {
+  font-size: 11px;
+  max-height: 200px;
+  overflow-y: auto;
+}

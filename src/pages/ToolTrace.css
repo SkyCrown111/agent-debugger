@@ -1,0 +1,55 @@
+/* Tool Trace Page 样式 */
+.tool-trace-page {
+  animation: fadeIn 0.3s ease;
+}
+
+.tool-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+.tool-card .ant-table {
+  background: transparent;
+}
+
+.tool-card .ant-table-thead > tr > th {
+  background: #21262d;
+  border-bottom: 1px solid #30363d;
+}
+
+.tool-card .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #30363d;
+}
+
+.tool-card .ant-table-tbody > tr:hover > td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.params-preview {
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.expanded-content {
+  padding: 16px;
+  background: #0d1117;
+  border-radius: 6px;
+}
+
+.expanded-content h4 {
+  color: #8b949e;
+  margin-bottom: 8px;
+}
+
+.expanded-content .params-full,
+.expanded-content .result,
+.expanded-content .error {
+  margin-bottom: 16px;
+}
+
+.expanded-content .error pre {
+  color: #ff4d4f;
+}

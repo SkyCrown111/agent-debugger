@@ -1,0 +1,55 @@
+/* 标题栏样式 */
+.title-bar {
+  height: 32px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-app-region: drag;
+  border-bottom: 1px solid #30363d;
+}
+
+.title-bar-drag {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 18px;
+}
+
+.logo-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #c9d1d9;
+}
+
+.title-bar-controls {
+  display: flex;
+  -webkit-app-region: no-drag;
+}
+
+.title-bar-controls .ant-btn {
+  width: 46px;
+  height: 32px;
+  border-radius: 0;
+  color: #8b949e;
+}
+
+.title-bar-controls .ant-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #c9d1d9;
+}
+
+.title-bar-controls .close-btn:hover {
+  background: #ff4d4f !important;
+  color: #fff !important;
+}

@@ -1,0 +1,43 @@
+/* Dashboard 样式 */
+.dashboard {
+  animation: fadeIn 0.3s ease;
+}
+
+.stats-grid {
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+.stat-card .ant-statistic-title {
+  color: #8b949e;
+}
+
+.stat-card .ant-statistic-content {
+  color: #c9d1d9;
+}
+
+.stat-detail {
+  margin-left: 12px;
+  font-size: 12px;
+}
+
+.stat-detail .anticon {
+  margin-right: 4px;
+}
+
+.token-detail {
+  font-size: 12px;
+  color: #8b949e;
+  margin-left: 8px;
+}
+
+.timeline-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}

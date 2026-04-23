@@ -1,0 +1,30 @@
+/* Token Analysis Page 样式 */
+.token-analysis-page {
+  animation: fadeIn 0.3s ease;
+}
+
+.token-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+.model-stats-card {
+  margin-top: 16px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+.model-stats-card .ant-table {
+  background: transparent;
+}
+
+.model-stats-card .ant-table-thead > tr > th {
+  background: #21262d;
+  border-bottom: 1px solid #30363d;
+}
+
+.model-stats-card .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #30363d;
+}

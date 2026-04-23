@@ -1,0 +1,15 @@
+/* Layout 样式 */
+.app-layout {
+  height: 100vh;
+  background: #0d1117;
+}
+
+.main-layout {
+  background: #0d1117;
+}
+
+.content {
+  padding: 16px;
+  overflow-y: auto;
+  height: calc(100vh - 32px - 32px); /* 减去标题栏高度 */
+}

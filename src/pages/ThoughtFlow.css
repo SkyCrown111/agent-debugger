@@ -1,0 +1,10 @@
+/* Thought Flow Page 样式 */
+.thought-flow-page {
+  animation: fadeIn 0.3s ease;
+}
+
+.thought-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}

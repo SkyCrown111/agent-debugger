@@ -1,0 +1,49 @@
+/* Thought Timeline 样式 */
+.thought-timeline {
+  padding: 16px;
+}
+
+.timeline-empty {
+  padding: 40px;
+  text-align: center;
+  color: #8b949e;
+}
+
+.timeline-item {
+  padding: 8px 0;
+}
+
+.timeline-item .header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.timeline-item .duration,
+.timeline-item .tokens {
+  font-size: 12px;
+  color: #8b949e;
+}
+
+.timeline-item .params,
+.timeline-item .result,
+.timeline-item .error {
+  margin-top: 8px;
+}
+
+.timeline-item .params pre,
+.timeline-item .result pre {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.timeline-item .error pre {
+  color: #ff4d4f;
+  border: 1px solid #ff4d4f33;
+}
+
+.timeline-item .content {
+  color: #c9d1d9;
+  line-height: 1.6;
+}

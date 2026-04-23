@@ -1,0 +1,28 @@
+/* Settings Page 样式 */
+.settings-page {
+  animation: fadeIn 0.3s ease;
+  max-width: 600px;
+}
+
+.settings-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.settings-card .ant-form-item-label > label {
+  color: #c9d1d9;
+}
+
+.settings-card .ant-input,
+.settings-card .ant-select-selector {
+  background: #0d1117;
+  border-color: #30363d;
+  color: #c9d1d9;
+}
+
+.settings-card .ant-input:focus,
+.settings-card .ant-input-focused {
+  border-color: #1890ff;
+}
