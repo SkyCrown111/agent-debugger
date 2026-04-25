@@ -4,9 +4,9 @@
 
 ![Agent Debugger Logo](./docs/logo.png)
 
-**Chrome DevTools for AI Agents**
+**AI Agent 的 Chrome DevTools**
 
-Visualize, debug, and analyze your AI Agents
+可视化调试、监控、分析你的 AI Agent
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)](https://www.typescriptlang.org/)
@@ -19,54 +19,54 @@ Visualize, debug, and analyze your AI Agents
 
 ---
 
-## ✨ Features
+## ✨ 特性
 
-### 🔍 Thought Flow Visualization
-- **Flow Graph View**: Tree structure displaying Agent's thinking process
-- **Timeline View**: View all activities in chronological order
-- **Search & Filter**: Quickly locate specific thoughts or tool calls
-- **Detail Panel**: View complete content, parameters, and results
+### 🔍 思考流可视化
+- **流程图视图**: 树形结构展示 Agent 思考过程
+- **时间线视图**: 按时间顺序查看所有活动
+- **搜索过滤**: 快速定位特定思考或工具调用
+- **详情面板**: 查看完整内容、参数、结果
 
-### 🛠️ Tool Call Tracing
-- **Real-time Monitoring**: Track all tool call statuses
-- **Performance Analysis**: Identify slow calls and performance bottlenecks
-- **Parameter Details**: View complete call parameters and return values
-- **Error Tracking**: Quickly locate failure causes
+### 🛠️ 工具调用追踪
+- **实时监控**: 追踪所有工具调用状态
+- **性能分析**: 识别慢调用和性能瓶颈
+- **参数详情**: 查看完整调用参数和返回值
+- **错误追踪**: 快速定位失败原因
 
-### 📊 Token Analysis
-- **Usage Statistics**: Token usage statistics by model
-- **Trend Charts**: Visualize token usage trends
-- **Cost Calculation**: Estimate API call costs
-- **Custom Pricing**: Support custom model pricing
+### 📊 Token 分析
+- **使用统计**: 按模型分类统计 Token 使用
+- **趋势图表**: 可视化 Token 使用趋势
+- **成本计算**: 预估 API 调用成本
+- **自定义定价**: 支持自定义模型定价
 
-### 🔌 Multi-language SDK
-- **TypeScript SDK**: Native support for JavaScript/TypeScript projects
-- **Python SDK**: Support for Python Agent projects
-- **LangChain Integration**: One-click LangChain Callback integration
+### 🔌 多语言 SDK
+- **TypeScript SDK**: 原生支持 JavaScript/TypeScript 项目
+- **Python SDK**: 支持 Python Agent 项目
+- **LangChain 集成**: 一键集成 LangChain Callback
 
 ---
 
-## 📸 Screenshots
+## 📸 截图
 
-### Dashboard Overview
+### Dashboard 总览
 ![Dashboard](./docs/screenshots/dashboard.png)
 
-### Thought Flow Visualization
+### 思考流可视化
 ![Thought Flow](./docs/screenshots/thought-flow.png)
 
-### Tool Call Tracing
+### 工具调用追踪
 ![Tool Trace](./docs/screenshots/tool-trace.png)
 
-### Token Analysis
+### Token 分析
 ![Token Analysis](./docs/screenshots/token-analysis.png)
 
 ---
 
-## 🚀 Quick Start
+## 🚀 快速开始
 
-### Installation
+### 安装
 
-#### Download Desktop App
+#### 下载桌面应用
 ```bash
 # macOS
 brew install --cask agent-debugger
@@ -78,7 +78,7 @@ winget install agent-debugger
 snap install agent-debugger
 ```
 
-#### Or Build from Source
+#### 或从源码构建
 ```bash
 git clone https://github.com/SkyCrown111/agent-debugger.git
 cd agent-debugger
@@ -100,28 +100,28 @@ npm install @hermes/agent-sdk
 
 ---
 
-## 💡 Usage Examples
+## 💡 使用示例
 
-### OpenAI Integration (Recommended)
+### OpenAI 集成 (推荐)
 
 ```typescript
 import { HermesOpenAI } from '@hermes/agent-sdk/openai';
 
-// Simply replace OpenAI with HermesOpenAI
+// 只需替换 OpenAI 为 HermesOpenAI
 const openai = new HermesOpenAI({
   apiKey: process.env.OPENAI_API_KEY,
   hermes: { agentName: 'My Agent' }
 });
 
-// Use normally - all calls are automatically tracked
+// 正常使用 - 自动追踪所有调用
 const response = await openai.chat.completions.create({
   model: 'gpt-4',
   messages: [{ role: 'user', content: 'Hello!' }]
 });
-// Token usage, thought process, tool calls are automatically sent to debugger
+// Token 使用、思考过程、工具调用自动发送到调试器
 ```
 
-### Anthropic (Claude) Integration
+### Anthropic (Claude) 集成
 
 ```typescript
 import { HermesAnthropic } from '@hermes/agent-sdk/anthropic';
@@ -136,34 +136,34 @@ const response = await anthropic.messages.create({
   max_tokens: 1024,
   messages: [{ role: 'user', content: 'Hello!' }]
 });
-// Automatically track thought process, tool calls, token usage
+// 自动追踪思考过程、工具调用、Token 使用
 ```
 
-### LangChain Integration
+### LangChain 集成
 
 ```typescript
 import { HermesCallbackHandler } from '@hermes/agent-sdk/langchain';
 import { ChatOpenAI } from '@langchain/openai';
 import { AgentExecutor } from 'langchain/agents';
 
-// Create callback handler
+// 创建回调处理器
 const hermesHandler = new HermesCallbackHandler({
   agentName: 'LangChain Agent'
 });
 
-// Add to any LangChain component
+// 添加到任何 LangChain 组件
 const model = new ChatOpenAI({
   callbacks: [hermesHandler]
 });
 
-// All executions are automatically tracked
+// 所有执行自动追踪
 const executor = AgentExecutor.fromAgentAndTools({
   agent, tools,
   callbacks: [hermesHandler]
 });
 ```
 
-### Manual Integration
+### 手动集成
 
 ```typescript
 import { Hermes } from '@hermes/agent-sdk';
@@ -175,13 +175,13 @@ const hermes = new Hermes({
 
 await hermes.connect();
 
-// Send thought
+// 发送思考
 hermes.sendThought({
   content: 'Analyzing user request...',
   type: 'reasoning'
 });
 
-// Track tool call
+// 追踪工具调用
 const toolId = hermes.startToolCall({
   toolName: 'web_search',
   params: { query: 'AI news' }
@@ -193,7 +193,7 @@ hermes.endToolCall(toolId, {
   status: 'success'
 });
 
-// Send token usage
+// 发送 Token 使用
 hermes.sendTokenUsage({
   inputTokens: 100,
   outputTokens: 50,
@@ -203,7 +203,7 @@ hermes.sendTokenUsage({
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ 架构
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -237,29 +237,29 @@ hermes.sendTokenUsage({
 
 ---
 
-## 📦 Project Structure
+## 📦 项目结构
 
 ```
 agent-debugger/
-├── electron/                 # Electron main process
-│   ├── main.ts              # Main process entry
-│   ├── preload.ts           # Preload script
-│   └── services/            # Backend services
+├── electron/                 # Electron 主进程
+│   ├── main.ts              # 主进程入口
+│   ├── preload.ts           # 预加载脚本
+│   └── services/            # 后端服务
 │       ├── WebSocketServer.ts
 │       └── StoreService.ts
-├── src/                     # React frontend
-│   ├── components/          # UI components
-│   ├── pages/               # Pages
-│   ├── stores/              # Zustand state management
-│   ├── hooks/               # Custom hooks
-│   └── utils/               # Utility functions
+├── src/                     # React 前端
+│   ├── components/          # UI 组件
+│   ├── pages/               # 页面
+│   ├── stores/              # Zustand 状态管理
+│   ├── hooks/               # 自定义 Hooks
+│   └── utils/               # 工具函数
 ├── sdk/                     # SDK
 │   ├── python/              # Python SDK
 │   └── typescript/          # TypeScript SDK
-├── docs/                    # Documentation
-│   ├── screenshots/         # Screenshots
-│   └── examples/            # Example projects
-└── examples/                # Complete examples
+├── docs/                    # 文档
+│   ├── screenshots/         # 截图
+│   └── examples/            # 示例项目
+└── examples/                # 完整示例
     ├── python-agent/
     ├── langchain-agent/
     └── typescript-agent/
@@ -267,51 +267,51 @@ agent-debugger/
 
 ---
 
-## 🛠️ Development
+## 🛠️ 开发
 
-### Requirements
+### 环境要求
 - Node.js 18+
-- Python 3.8+ (for Python SDK)
-- npm or yarn
+- Python 3.8+ (用于 Python SDK)
+- npm 或 yarn
 
-### Development Mode
+### 开发模式
 
 ```bash
-# Install dependencies
+# 安装依赖
 npm install
 
-# Start development server
+# 启动开发服务器
 npm run electron:dev
 ```
 
-### Build
+### 构建
 
 ```bash
-# Build frontend
+# 构建前端
 npm run build
 
-# Build desktop app
+# 构建桌面应用
 npm run electron:build
 ```
 
-### Test
+### 测试
 
 ```bash
-# Run frontend tests
+# 运行前端测试
 npm test
 
-# Run Python SDK tests
+# 运行 Python SDK 测试
 cd sdk/python
 pytest
 ```
 
 ---
 
-## 🤝 Contributing
+## 🤝 贡献
 
-Contributions are welcome! Please check [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
+欢迎贡献！请查看 [CONTRIBUTING.md](./CONTRIBUTING.md) 了解详情。
 
-### Contributors
+### 贡献者
 
 <a href="https://github.com/SkyCrown111/agent-debugger/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=SkyCrown111/agent-debugger" />
@@ -319,13 +319,13 @@ Contributions are welcome! Please check [CONTRIBUTING.md](./CONTRIBUTING.md) for
 
 ---
 
-## 📄 License
+## 📄 许可证
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+本项目采用 MIT 许可证 - 查看 [LICENSE](./LICENSE) 文件了解详情。
 
 ---
 
-## 🙏 Acknowledgments
+## 🙏 致谢
 
 - [Electron](https://www.electronjs.org/)
 - [React](https://reactjs.org/)
@@ -336,9 +336,9 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ---
 
-## 📮 Contact
+## 📮 联系方式
 
-- Author: SkyCrown111
+- 作者: SkyCrown111
 - GitHub: [@SkyCrown111](https://github.com/SkyCrown111)
 - Email: akangx@foxmail.com
 
@@ -346,6 +346,6 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 <div align="center">
 
-**If this project helps you, please give it a ⭐️ Star!**
+**如果这个项目对你有帮助，请给一个 ⭐️ Star！**
 
 </div>
