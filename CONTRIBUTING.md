@@ -1,95 +1,295 @@
 # Contributing to Agent Debugger
 
-感谢你考虑为 Agent Debugger 做贡献！
+Thank you for your interest in contributing to Agent Debugger! This document provides guidelines and instructions for contributing.
 
-## 🎯 贡献方式
+## 📋 Table of Contents
 
-- 报告 Bug
-- 提出新功能建议
-- 编写代码
-- 改进文档
-- 分享使用经验
-
-## 🐛 报告 Bug
-
-在提交 Bug 报告前，请：
-
-1. 搜索 [Issues](https://github.com/your-username/agent-debugger/issues) 确认未被报告
-2. 使用最新的开发版本测试
-3. 收集以下信息：
-   - 操作系统和版本
-   - Node.js 版本
-   - 复现步骤
-   - 预期行为 vs 实际行为
-   - 截图（如有）
-
-## 💡 功能建议
-
-欢迎提出新功能建议！请：
-
-1. 描述功能的使用场景
-2. 说明为什么这个功能有用
-3. 如果可能，提供实现思路
-
-## 🔧 代码贡献
-
-### 开发环境设置
-
-```bash
-# 克隆仓库
-git clone https://github.com/your-username/agent-debugger.git
-cd agent-debugger
-
-# 安装依赖
-npm install
-
-# 启动开发服务器
-npm run dev
-```
-
-### 代码规范
-
-- 使用 TypeScript
-- 遵循 ESLint 配置
-- 编写清晰的注释
-- 保持代码简洁
-
-### 提交规范
-
-使用语义化提交信息：
-
-- `feat: 添加新功能`
-- `fix: 修复 Bug`
-- `docs: 更新文档`
-- `style: 代码格式调整`
-- `refactor: 重构代码`
-- `test: 添加测试`
-- `chore: 构建/工具变动`
-
-### Pull Request 流程
-
-1. Fork 仓库
-2. 创建分支：`git checkout -b feature/amazing-feature`
-3. 提交更改：`git commit -m 'feat: add amazing feature'`
-4. 推送分支：`git push origin feature/amazing-feature`
-5. 提交 Pull Request
-
-## 📚 文档贡献
-
-文档改进包括：
-
-- 修正拼写/语法错误
-- 添加示例代码
-- 改进说明清晰度
-- 翻译文档
-
-## ❓ 问题？
-
-如有疑问，可以：
-
-- 在 [Discussions](https://github.com/your-username/agent-debugger/discussions) 提问
-- 发送邮件至：your-email@example.com
+- [Code of Conduct](#code-of-conduct)
+- [Getting Started](#getting-started)
+- [Development Setup](#development-setup)
+- [Project Structure](#project-structure)
+- [Making Changes](#making-changes)
+- [Submitting Changes](#submitting-changes)
+- [Coding Standards](#coding-standards)
+- [Testing](#testing)
+- [Documentation](#documentation)
 
 ---
 
-再次感谢你的贡献！❤️
+## Code of Conduct
+
+This project adheres to a code of conduct that all contributors are expected to follow. Please be respectful and constructive in all interactions.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ (for frontend development)
+- Python 3.8+ (for Python SDK development)
+- Git
+- npm or yarn
+
+### Fork and Clone
+
+1. Fork the repository on GitHub
+2. Clone your fork locally:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/agent-debugger.git
+   cd agent-debugger
+   ```
+3. Add the upstream repository:
+   ```bash
+   git remote add upstream https://github.com/erpan/agent-debugger.git
+   ```
+
+---
+
+## Development Setup
+
+### Frontend (Electron + React)
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run electron:dev
+```
+
+The app will open automatically. Hot reload is enabled for React components.
+
+### Python SDK
+
+```bash
+cd sdk/python
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+# or: venv\Scripts\activate  # Windows
+
+# Install dependencies
+pip install -e ".[dev]"
+
+# Run tests
+pytest
+```
+
+### TypeScript SDK
+
+```bash
+cd sdk/typescript
+
+# Install dependencies
+npm install
+
+# Build
+npm run build
+
+# Run tests
+npm test
+```
+
+---
+
+## Project Structure
+
+```
+agent-debugger/
+├── electron/                 # Electron main process
+│   ├── main.ts              # Main process entry
+│   ├── preload.ts           # Preload scripts
+│   └── services/            # Backend services
+│       ├── WebSocketServer.ts
+│       └── StoreService.ts
+├── src/                     # React frontend
+│   ├── components/          # UI components
+│   │   ├── ThoughtFlowGraph/
+│   │   ├── ThoughtTimeline/
+│   │   └── Layout/
+│   ├── pages/               # Page components
+│   │   ├── Dashboard.tsx
+│   │   ├── ThoughtFlow.tsx
+│   │   ├── ToolTrace.tsx
+│   │   ├── TokenAnalysis.tsx
+│   │   ├── MessageLog.tsx
+│   │   └── Settings.tsx
+│   ├── stores/              # Zustand stores
+│   │   ├── sessionStore.ts
+│   │   └── agentStore.ts
+│   ├── hooks/               # Custom hooks
+│   ├── utils/               # Utility functions
+│   └── styles/              # CSS styles
+├── sdk/                     # SDKs
+│   ├── python/              # Python SDK
+│   │   ├── agent_debugger/
+│   │   ├── tests/
+│   │   └── pyproject.toml
+│   └── typescript/          # TypeScript SDK
+│       ├── src/
+│       ├── tests/
+│       └── package.json
+├── examples/                # Example projects
+│   ├── python-agent/
+│   ├── langchain-agent/
+│   └── typescript-agent/
+├── docs/                    # Documentation
+└── tests/                   # Integration tests
+```
+
+---
+
+## Making Changes
+
+### Branch Naming
+
+Use descriptive branch names:
+- `feature/add-error-tracking` - New features
+- `fix/websocket-connection` - Bug fixes
+- `docs/update-readme` - Documentation changes
+- `refactor/optimize-rendering` - Code refactoring
+
+### Commit Messages
+
+Follow this format:
+```
+type(scope): description
+
+[optional body]
+```
+
+Types:
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation
+- `style`: Code style (formatting, etc.)
+- `refactor`: Code refactoring
+- `test`: Adding tests
+- `chore`: Maintenance tasks
+
+Examples:
+```
+feat(thought-flow): add search functionality
+fix(websocket): handle connection timeout
+docs(readme): update installation instructions
+```
+
+---
+
+## Submitting Changes
+
+### Pull Request Process
+
+1. Update your branch with upstream:
+   ```bash
+   git fetch upstream
+   git merge upstream/main
+   ```
+
+2. Push your changes:
+   ```bash
+   git push origin your-branch-name
+   ```
+
+3. Create a Pull Request on GitHub
+
+4. Fill in the PR template:
+   - Description of changes
+   - Related issue (if any)
+   - Testing performed
+   - Screenshots (if applicable)
+
+5. Wait for review and address feedback
+
+### PR Requirements
+
+- All tests must pass
+- Code must follow style guidelines
+- Documentation must be updated (if applicable)
+- No merge conflicts
+
+---
+
+## Coding Standards
+
+### TypeScript/JavaScript
+
+- Use TypeScript for all new code
+- Follow ESLint rules
+- Use meaningful variable names
+- Add JSDoc comments for public functions
+- Prefer functional components with hooks
+
+### Python
+
+- Follow PEP 8 style guide
+- Use type hints
+- Add docstrings for public functions
+- Maximum line length: 100 characters
+
+### CSS
+
+- Use CSS modules or separate CSS files
+- Follow existing naming conventions
+- Use dark theme colors from variables
+
+---
+
+## Testing
+
+### Frontend Tests
+
+```bash
+npm test
+```
+
+### Python SDK Tests
+
+```bash
+cd sdk/python
+pytest
+```
+
+### Manual Testing
+
+1. Start the Electron app
+2. Run example agents from `examples/`
+3. Verify all features work correctly
+
+---
+
+## Documentation
+
+### Updating Documentation
+
+- Update README.md for user-facing changes
+- Update CHANGELOG.md for version changes
+- Add inline comments for complex code
+- Update API documentation for SDK changes
+
+### Documentation Style
+
+- Use clear, concise language
+- Include code examples
+- Add screenshots for UI features
+- Link to related documentation
+
+---
+
+## Getting Help
+
+- Open an issue for bugs or feature requests
+- Join discussions in existing issues
+- Check existing documentation
+
+---
+
+## Recognition
+
+Contributors will be listed in:
+- README.md contributors section
+- Release notes for significant contributions
+
+Thank you for contributing to Agent Debugger! 🎉

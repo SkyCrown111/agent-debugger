@@ -1,15 +1,24 @@
-/* Layout 样式 */
-.app-layout {
+/* Layout 样式 - Claude Design */
+.app-container {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  background: #0d1117;
+  background: var(--bg-primary);
+  overflow: hidden;
 }
 
-.main-layout {
-  background: #0d1117;
+.main-container {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
-.content {
-  padding: 16px;
+.content-area {
+  flex: 1;
+  min-width: 0;
+  padding: 24px;
   overflow-y: auto;
-  height: calc(100vh - 32px - 32px); /* 减去标题栏高度 */
+  overflow-x: hidden;
+  background: var(--bg-primary);
 }

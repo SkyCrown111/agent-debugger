@@ -9,8 +9,8 @@ interface WebSocketMessage {
 }
 
 export function useWebSocket() {
-  const { addAgent, removeAgent, setSelectedAgent } = useAgentStore();
-  const { addThought, addToolCall, updateToolResult, addTokenUsage, addMessage } = useSessionStore();
+  const { addAgent, removeAgent } = useAgentStore();
+  const { addThought, addToolCall, updateToolCall, addTokenUsage } = useSessionStore();
 
   useEffect(() => {
     const ws = new WebSocket('ws://localhost:8765');
@@ -73,14 +73,14 @@ export function useWebSocket() {
           id: msg.payload.id,
           agentId: msg.payload.agentId,
           timestamp: msg.timestamp,
-          name: msg.payload.name,
+          toolName: msg.payload.name,
           params: msg.payload.params,
           status: 'pending',
         });
         break;
 
       case 'tool_result':
-        updateToolResult(msg.payload.id, {
+        updateToolCall(msg.payload.id, {
           result: msg.payload.result,
           error: msg.payload.error,
           duration: msg.payload.duration,
@@ -90,20 +90,12 @@ export function useWebSocket() {
 
       case 'token_usage':
         addTokenUsage({
+          id: msg.payload.id,
           agentId: msg.payload.agentId,
           timestamp: msg.timestamp,
-          input: msg.payload.input,
-          output: msg.payload.output,
+          inputTokens: msg.payload.input,
+          outputTokens: msg.payload.output,
           model: msg.payload.model,
-        });
-        break;
-
-      case 'error':
-        addMessage({
-          id: msg.payload.id,
-          timestamp: msg.timestamp,
-          category: 'error',
-          content: msg.payload.content,
         });
         break;
     }

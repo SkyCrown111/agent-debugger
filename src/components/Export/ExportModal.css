@@ -1,0 +1,167 @@
+/* Export Modal 样式 - Claude Design */
+.export-stats-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.export-stats-card .stat-item {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.export-stats-card .stat-item .ant-typography {
+  display: block;
+}
+
+.export-stats-card .stat-label {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.export-stats-card .stat-value {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.export-section {
+  margin-bottom: 20px;
+}
+
+.export-section .section-title {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.export-section .ant-checkbox-wrapper {
+  color: var(--text-primary);
+  padding: 8px 0;
+}
+
+.export-section .ant-checkbox-inner {
+  border-color: var(--border-color);
+  background: var(--bg-tertiary);
+}
+
+.export-section .ant-checkbox-checked .ant-checkbox-inner {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.export-format-selector {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.format-option {
+  flex: 1;
+  padding: 14px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--bg-tertiary);
+}
+
+.format-option:hover {
+  border-color: var(--accent-primary);
+  background: var(--bg-elevated);
+}
+
+.format-option.selected {
+  border-color: var(--accent-primary);
+  background: rgba(217, 119, 6, 0.1);
+}
+
+.format-option .format-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: var(--accent-primary);
+}
+
+.format-option .format-name {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.format-option .format-desc {
+  color: var(--text-muted);
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* Modal 样式覆盖 */
+.ant-modal-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.ant-modal-header {
+  background: transparent;
+  border-bottom: 1px solid var(--border-color);
+  padding: 18px 24px;
+}
+
+.ant-modal-title {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.ant-modal-close-x {
+  color: var(--text-secondary);
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+}
+
+.ant-modal-close-x:hover {
+  color: var(--accent-primary);
+}
+
+.ant-modal-body {
+  padding: 24px;
+}
+
+.ant-modal-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 16px 24px;
+}
+
+.ant-modal-footer .ant-btn {
+  border-radius: var(--radius-md);
+  font-weight: 500;
+}
+
+.ant-modal-footer .ant-btn-default {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.ant-modal-footer .ant-btn-default:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.ant-modal-footer .ant-btn-primary {
+  background: var(--accent-gradient);
+  border: none;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+}
+
+.ant-modal-footer .ant-btn-primary:hover {
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.5);
+  transform: translateY(-1px);
+}

@@ -110,7 +110,7 @@ export class StoreService {
 
   // 获取所有会话
   getAllSessions(): Session[] {
-    const sessions = this.store.get('sessions');
+    const sessions = this.store.get('sessions') as Record<string, Session>;
     return Object.values(sessions).sort((a, b) => 
       new Date(b.startTime).getTime() - new Date(a.startTime).getTime()
     );
@@ -287,5 +287,37 @@ export class StoreService {
     const sessions = this.store.get('sessions');
     sessions[session.id] = session;
     this.store.set('sessions', sessions);
+  }
+
+  // 获取所有 Agent 列表
+  getAgents(): { id: string; name: string; connectedAt: string }[] {
+    const sessions = this.getAllSessions();
+    const agentMap = new Map<string, { id: string; name: string; connectedAt: string }>();
+    
+    sessions.forEach(session => {
+      if (!agentMap.has(session.agentId)) {
+        agentMap.set(session.agentId, {
+          id: session.agentId,
+          name: session.agentName,
+          connectedAt: session.startTime
+        });
+      }
+    });
+    
+    return Array.from(agentMap.values());
+  }
+
+  // 获取配置
+  getConfig(): { theme: string; autoStart: boolean; port: number } {
+    return this.store.get('config') as any || {
+      theme: 'dark',
+      autoStart: true,
+      port: 8765
+    };
+  }
+
+  // 设置配置
+  setConfig(config: any): void {
+    this.store.set('config', config);
   }
 }

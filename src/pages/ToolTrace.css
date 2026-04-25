@@ -1,55 +1,279 @@
-/* Tool Trace Page 样式 */
+/* 工具追踪页面样式 - Claude Design */
 .tool-trace-page {
-  animation: fadeIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
 }
 
-.tool-card {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 8px;
+.stats-row {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
 }
 
-.tool-card .ant-table {
+.stats-row .ant-col {
+  display: flex;
+  padding: 0 8px;
+}
+
+.stats-row .ant-card {
+  width: 100%;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--border-light);
+}
+
+.stat-card .ant-statistic-title {
+  color: var(--text-muted);
+}
+
+.stat-card .ant-statistic-content {
+  color: var(--text-primary);
+}
+
+.slow-call-alert {
+  margin-bottom: 20px;
+  background: rgba(217, 119, 6, 0.1);
+  border-color: rgba(217, 119, 6, 0.3);
+  border-radius: var(--radius-lg);
+}
+
+.toolbar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-card .ant-card-head {
+  border-bottom-color: var(--border-color);
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.table-card .ant-card-body {
+  flex: 1;
+  overflow: auto;
+  min-height: 0;
+}
+
+.table-card .ant-table {
   background: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.tool-card .ant-table-thead > tr > th {
-  background: #21262d;
-  border-bottom: 1px solid #30363d;
+.table-card .ant-table-wrapper {
+  height: 100%;
 }
 
-.tool-card .ant-table-tbody > tr > td {
-  border-bottom: 1px solid #30363d;
+.table-card .ant-spin-nested-loading,
+.table-card .ant-spin-container {
+  height: 100%;
 }
 
-.tool-card .ant-table-tbody > tr:hover > td {
-  background: rgba(255, 255, 255, 0.02);
+.table-card .ant-table-container {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-card .ant-table-header {
+  flex-shrink: 0;
+}
+
+.table-card .ant-table-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto !important;
+}
+
+.table-card .ant-table-pagination {
+  flex-shrink: 0;
+  margin: 12px 0;
+}
+
+.table-card .ant-table-thead > tr > th {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  border-bottom-color: var(--border-color);
+  font-weight: 500;
+}
+
+.table-card .ant-table-tbody > tr > td {
+  background: transparent;
+  color: var(--text-primary);
+  border-bottom-color: var(--border-color);
+}
+
+.table-card .ant-table-tbody > tr:hover > td {
+  background: rgba(217, 119, 6, 0.05);
 }
 
 .params-preview {
-  max-width: 300px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  background: var(--bg-tertiary);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.duration-slow {
+  color: var(--accent-primary);
+  font-weight: 600;
 }
 
 .expanded-content {
   padding: 16px;
-  background: #0d1117;
-  border-radius: 6px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
 }
 
 .expanded-content h4 {
-  color: #8b949e;
-  margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.expanded-content .params-full,
-.expanded-content .result,
-.expanded-content .error {
-  margin-bottom: 16px;
+.expanded-content pre {
+  background: var(--bg-secondary);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 12px;
+  max-height: 200px;
+  overflow: auto;
+  margin: 0;
+  border: 1px solid var(--border-color);
+}
+
+.expanded-content .result pre {
+  border-left: 3px solid var(--accent-green);
 }
 
 .expanded-content .error pre {
-  color: #ff4d4f;
+  border-left: 3px solid var(--accent-red);
+  color: var(--accent-red);
+}
+
+/* 时间线视图 */
+.timeline-view-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.timeline-view-card .ant-card-head-title {
+  color: var(--text-primary);
+}
+
+.timeline-item-content {
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.timeline-item-content:hover {
+  background: var(--bg-tertiary);
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.timeline-time {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.timeline-params {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* 详情抽屉 */
+.tool-detail {
+  padding: 20px 0;
+}
+
+.detail-json {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  overflow-x: auto;
+  max-height: 400px;
+  border: 1px solid var(--border-color);
+}
+
+.detail-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--accent-red);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  color: var(--accent-red);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.text-warning {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* 搜索框样式 */
+.toolbar .ant-input-search .ant-input {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+}
+
+.toolbar .ant-input-search .ant-input::placeholder {
+  color: var(--text-muted);
+}
+
+.toolbar .ant-select-selector {
+  background: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary);
+  border-radius: var(--radius-md) !important;
 }

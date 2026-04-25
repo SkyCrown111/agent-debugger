@@ -1,7 +1,68 @@
-node_modules
-dist
-dist-electron
-release
-*.log
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Electron
+dist-electron/
+release/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+.coverage
+.pytest_cache/
+.nyc_output/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# OS
 Thumbs.db
+.DS_Store
+
+# Package files
+*.tgz
+*.dmg
+*.AppImage
+*.snap
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+.eslintcache
+.stylelintcache

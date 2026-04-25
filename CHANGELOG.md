@@ -5,53 +5,79 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - 2025-01-23
+## [Unreleased]
 
 ### Added
-- 🎉 Initial release
-- ✨ Real-time thought visualization
-- 🔧 Tool call tracing
-- 📊 Token usage analysis
-- 🤝 Multi-agent support
-- 📝 Message logging
-- 🎨 Dark theme UI
-- 📦 SDK for agent integration
-- 📚 Documentation
+- Performance monitoring dashboard
+- Error debugging with stack traces
+- Multi-agent collaboration visualization
+- LangChain auto-integration decorator
+- Export data to JSON/CSV
+
+## [0.1.0] - 2024-04-24
+
+### Added
+- Initial release
+- Electron + React desktop application
+- WebSocket server for real-time communication
+- Thought flow visualization (graph + timeline views)
+- Tool call tracing with detailed panels
+- Token analysis with cost calculator
+- Python SDK with LangChain integration
+- TypeScript SDK
+- Demo mode with simulated data
+- Dark theme UI
+- Search and filter functionality
+- Slow call warnings (>1000ms)
+- Model-specific pricing configuration
 
 ### Features
-- Dashboard with agent overview
-- Thought flow timeline
-- Tool trace table with expandable details
-- Token analysis by model
-- Message log with search/filter
-- Settings panel
-- WebSocket server for agent connections
 
-### Technical
-- Electron + React + TypeScript
-- Vite for fast builds
-- Ant Design components
+#### Thought Flow Visualization
+- Tree-structured flow graph using ReactFlow
+- Timeline view with chronological events
+- Search thoughts by content
+- Filter by type (reasoning/planning/reflection)
+- Duration and token statistics
+- Detailed thought panel
+
+#### Tool Call Tracing
+- Real-time status tracking (pending/success/error)
+- Table and timeline views
+- Parameter and result details
+- Slow call detection and warnings
+- Success rate statistics
+- Average duration calculation
+
+#### Token Analysis
+- Input/output token statistics
+- Trend charts (area chart)
+- Model distribution (pie chart)
+- Model comparison (bar chart)
+- Cost calculator with custom pricing
+- Support for GPT-4, Claude 3, and other models
+
+#### SDKs
+- Python SDK with context managers
+- TypeScript SDK with async/await
+- LangChain callback handler
+- Decorator for tool tracing
+- Auto-duration calculation
+
+### Technical Details
+- Built with Electron 28
+- React 18 with TypeScript
+- Ant Design 5 for UI components
+- ReactFlow for graph visualization
+- Recharts for data visualization
 - Zustand for state management
 - WebSocket for real-time communication
 
 ---
 
-## Future Plans
+## Version History
 
-### [0.2.0] - Planned
-- [ ] Export sessions to JSON/CSV
-- [ ] Session replay
-- [ ] Custom themes
-- [ ] Keyboard shortcuts
-- [ ] Agent performance metrics
-
-### [0.3.0] - Planned
-- [ ] Multi-language support
-- [ ] Cloud sync
-- [ ] Team collaboration
-- [ ] Agent templates
-- [ ] Advanced filtering
-
----
-
-[0.1.0]: https://github.com/your-username/agent-debugger/releases/tag/v0.1.0
+| Version | Date | Description |
+|---------|------|-------------|
+| 0.1.0 | 2024-04-24 | Initial release with core features |
+| 0.0.1 | 2024-04-20 | Project initialization |

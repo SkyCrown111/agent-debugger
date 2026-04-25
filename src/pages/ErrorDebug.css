@@ -1,0 +1,209 @@
+/* Error Debug Page 样式 - Claude Design */
+.error-debug-page {
+  padding: 20px;
+}
+
+.stats-row {
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.stat-card .ant-statistic-title {
+  color: var(--text-muted);
+}
+
+.stat-card .ant-statistic-content {
+  color: var(--text-primary);
+}
+
+.error-alert {
+  margin-bottom: 20px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-lg);
+}
+
+.toolbar-card {
+  margin-bottom: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.error-message {
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+.expanded-content {
+  padding: 16px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.stack-preview,
+.context-preview {
+  margin-bottom: 14px;
+}
+
+.stack-preview h4,
+.context-preview h4 {
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stack-preview pre,
+.context-preview pre {
+  background: var(--bg-secondary);
+  padding: 14px;
+  border-radius: var(--radius-md);
+  color: var(--accent-red);
+  font-size: 12px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  border: 1px solid var(--border-color);
+}
+
+.context-preview pre {
+  color: var(--accent-cyan);
+}
+
+.timeline-view-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.timeline-item-content {
+  cursor: pointer;
+  padding: 12px 16px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.timeline-item-content:hover {
+  background: var(--bg-elevated);
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.timeline-agent {
+  color: var(--accent-primary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.timeline-time {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.timeline-message {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.error-detail {
+  padding: 0;
+}
+
+.detail-message {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 18px;
+  border-radius: var(--radius-md);
+  color: var(--accent-red);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.detail-stack {
+  background: var(--bg-tertiary);
+  padding: 18px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 12px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+}
+
+.detail-context {
+  background: rgba(34, 211, 238, 0.1);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  padding: 18px;
+  border-radius: var(--radius-md);
+  color: var(--accent-cyan);
+  font-size: 12px;
+  overflow-x: auto;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Ant Design 覆盖 */
+.error-debug-page .ant-table {
+  background: transparent;
+}
+
+.error-debug-page .ant-table-thead > tr > th {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 500;
+}
+
+.error-debug-page .ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.error-debug-page .ant-table-tbody > tr:hover > td {
+  background: rgba(217, 119, 6, 0.05);
+}
+
+.error-debug-page .ant-empty-description {
+  color: var(--text-muted);
+}
+
+.error-debug-page .ant-timeline-item-content {
+  color: var(--text-primary);
+}
+
+.error-debug-page .ant-descriptions-bordered .ant-descriptions-item-label {
+  background: var(--bg-tertiary);
+}

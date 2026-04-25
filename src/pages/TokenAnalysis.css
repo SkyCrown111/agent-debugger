@@ -1,19 +1,104 @@
-/* Token Analysis Page 样式 */
+/* Token 分析页面样式 - Claude Design */
 .token-analysis-page {
-  animation: fadeIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.token-analysis-page .ant-tabs {
+  background: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.token-analysis-page .ant-tabs-nav {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.token-analysis-page .ant-tabs-tab {
+  color: var(--text-muted);
+}
+
+.token-analysis-page .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--accent-primary);
+}
+
+.token-analysis-page .ant-tabs-content-holder {
+  flex: 1;
+  overflow: auto;
+}
+
+.token-analysis-page .ant-tabs-content {
+  height: 100%;
+  padding-top: 20px;
+}
+
+.token-analysis-page .ant-tabs-tabpane {
+  height: 100%;
+  overflow: auto;
+}
+
+.overview-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stats-row {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+}
+
+.stats-row .ant-col {
+  display: flex;
+  padding: 0 8px;
+}
+
+.stats-row .ant-card {
+  width: 100%;
 }
 
 .token-card {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  transition: all 0.2s ease;
+}
+
+.token-card:hover {
+  border-color: var(--border-light);
+}
+
+.token-card .ant-statistic-title {
+  color: var(--text-muted);
+}
+
+.token-card .ant-statistic-content {
+  color: var(--text-primary);
+}
+
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.chart-card .ant-card-head-title {
+  color: var(--text-primary);
 }
 
 .model-stats-card {
-  margin-top: 16px;
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.model-stats-card .ant-card-head-title {
+  color: var(--text-primary);
 }
 
 .model-stats-card .ant-table {
@@ -21,10 +106,162 @@
 }
 
 .model-stats-card .ant-table-thead > tr > th {
-  background: #21262d;
-  border-bottom: 1px solid #30363d;
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  border-bottom-color: var(--border-color);
+  font-weight: 500;
 }
 
 .model-stats-card .ant-table-tbody > tr > td {
-  border-bottom: 1px solid #30363d;
+  background: transparent;
+  color: var(--text-primary);
+  border-bottom-color: var(--border-color);
+}
+
+.model-stats-card .ant-table-tbody > tr:hover > td {
+  background: rgba(217, 119, 6, 0.05);
+}
+
+.model-stats-card .ant-table-summary > tr > td {
+  background: var(--bg-tertiary);
+  border-top-color: var(--border-color);
+}
+
+/* 成本计算器 */
+.cost-calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cost-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.cost-card .ant-card-head-title {
+  color: var(--text-primary);
+}
+
+.cost-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cost-item {
+  padding: 16px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.cost-model {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cost-calls {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.cost-details {
+  display: flex;
+  gap: 20px;
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.cost-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.cost-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: var(--text-primary);
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.cost-total-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.custom-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pricing-input label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.pricing-input .ant-input-number {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+}
+
+.pricing-input .ant-input-number-input {
+  color: var(--text-primary);
+}
+
+.custom-result {
+  text-align: center;
+  padding: 20px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.pricing-reference {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.pricing-reference .ant-card-head-title {
+  color: var(--text-primary);
+}
+
+.pricing-reference .ant-table {
+  background: transparent;
+}
+
+.pricing-reference .ant-table-thead > tr > th {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  border-bottom-color: var(--border-color);
+  font-weight: 500;
+}
+
+.pricing-reference .ant-table-tbody > tr > td {
+  background: transparent;
+  color: var(--text-primary);
+  border-bottom-color: var(--border-color);
+}
+
+/* Recharts 样式 */
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-legend-item-text {
+  color: var(--text-primary) !important;
 }

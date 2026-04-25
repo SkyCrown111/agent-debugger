@@ -22,6 +22,7 @@ interface ThoughtPayload {
 interface ToolCallPayload {
   id: string;
   name: string;
+  toolName: string;
   params: any;
 }
 
@@ -33,8 +34,8 @@ interface ToolResultPayload {
 }
 
 interface TokenUsagePayload {
-  input: number;
-  output: number;
+  inputTokens: number;
+  outputTokens: number;
   model: string;
 }
 
@@ -61,10 +62,10 @@ export class AgentDebuggerClient {
       this.ws.on('open', () => {
         this.isConnected = true;
         this.send({
-          type: 'agent_connect',
+          type: 'register',
           payload: {
-            id: this.config.agentId || this.generateId(),
             name: this.config.agentName,
+            id: this.config.agentId || this.generateId(),
             metadata: this.config.metadata,
           },
           timestamp: new Date().toISOString(),
@@ -90,11 +91,6 @@ export class AgentDebuggerClient {
    */
   disconnect(): void {
     if (this.ws) {
-      this.send({
-        type: 'agent_disconnect',
-        payload: { id: this.config.agentId },
-        timestamp: new Date().toISOString(),
-      });
       this.ws.close();
       this.ws = null;
       this.isConnected = false;
@@ -125,6 +121,7 @@ export class AgentDebuggerClient {
       payload: {
         agentId: this.config.agentId,
         ...payload,
+        toolName: payload.name,
       },
       timestamp: new Date().toISOString(),
     });

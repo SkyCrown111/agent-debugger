@@ -29,7 +29,7 @@ export const AgentList: React.FC = () => {
             <span className="agent-name">{agent.name}</span>
           </div>
           {agent.metadata?.framework && (
-            <Tag color="blue">{agent.metadata.framework}</Tag>
+            <Tag color="orange">{agent.metadata.framework}</Tag>
           )}
         </List.Item>
       )}

@@ -1,10 +1,119 @@
-/* Thought Flow Page 样式 */
+/* 思考流页面样式 - Claude Design */
 .thought-flow-page {
-  animation: fadeIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.thought-flow-page .ant-tabs {
+  background: transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.thought-flow-page .ant-tabs-nav {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.thought-flow-page .ant-tabs-tab {
+  color: var(--text-muted);
+}
+
+.thought-flow-page .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--accent-primary);
+}
+
+.thought-flow-page .ant-tabs-content-holder {
+  flex: 1;
+  min-height: 0;
+}
+
+.thought-flow-page .ant-tabs-content {
+  height: 100%;
+  padding-top: 20px;
+}
+
+.thought-flow-page .ant-tabs-tabpane {
+  height: 100%;
+  overflow: auto;
 }
 
 .thought-card {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  height: 100%;
+  overflow: auto;
+}
+
+.thought-card .ant-card-head {
+  border-bottom-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  height: 100%;
+  overflow: auto;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.stat-card .ant-statistic-title {
+  color: var(--text-muted);
+}
+
+.stat-card .ant-statistic-content {
+  color: var(--text-primary);
+}
+
+.distribution-card,
+.duration-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.distribution-card .ant-card-head-title,
+.duration-card .ant-card-head-title {
+  color: var(--text-primary);
+}
+
+.distribution-card .ant-table {
+  background: transparent;
+}
+
+.distribution-card .ant-table-thead > tr > th {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  border-bottom-color: var(--border-color);
+  font-weight: 500;
+}
+
+.distribution-card .ant-table-tbody > tr > td {
+  background: transparent;
+  color: var(--text-primary);
+  border-bottom-color: var(--border-color);
+}
+
+.distribution-card .ant-table-tbody > tr:hover > td {
+  background: rgba(217, 119, 6, 0.05);
+}
+
+.duration-card .ant-statistic-title {
+  color: var(--text-muted);
 }

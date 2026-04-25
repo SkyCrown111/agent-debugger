@@ -10,14 +10,14 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <AntLayout className="app-layout">
+    <div className="app-container">
       <TitleBar />
-      <AntLayout className="main-layout">
+      <div className="main-container">
         <Sidebar />
-        <AntLayout.Content className="content">
+        <main className="content-area">
           {children}
-        </AntLayout.Content>
-      </AntLayout>
-    </AntLayout>
+        </main>
+      </div>
+    </div>
   );
 };

@@ -1,0 +1,179 @@
+/* Performance Page 样式 - Claude Design */
+.performance-page {
+  padding: 20px;
+}
+
+.performance-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.performance-page .metrics-row {
+  margin-bottom: 20px;
+}
+
+.performance-page .metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.performance-page .metric-card .ant-statistic-title {
+  color: var(--text-muted);
+}
+
+.performance-page .metric-card .ant-statistic-content {
+  color: var(--text-primary);
+}
+
+.performance-page .metric-footer {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.performance-page .metric-footer .trend-up {
+  color: var(--accent-green);
+}
+
+.performance-page .metric-footer .trend-down {
+  color: var(--accent-red);
+}
+
+.performance-page .chart-row {
+  margin-bottom: 20px;
+}
+
+.performance-page .chart-card,
+.performance-page .stats-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  height: 320px;
+}
+
+.performance-page .chart-container {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.performance-page .chart-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.performance-page .chart-bars {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 180px;
+  padding: 16px;
+}
+
+.performance-page .chart-bar-group {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.performance-page .chart-bar {
+  width: 24px;
+  min-height: 6px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: height 0.3s ease;
+}
+
+.performance-page .bar-thoughts {
+  background: var(--accent-gradient);
+  box-shadow: 0 0 10px rgba(217, 119, 6, 0.3);
+}
+
+.performance-page .bar-tools {
+  background: linear-gradient(180deg, var(--accent-cyan), #0891b2);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+}
+
+.performance-page .chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 12px;
+}
+
+.performance-page .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.performance-page .legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.performance-page .legend-color.thoughts {
+  background: var(--accent-primary);
+}
+
+.performance-page .legend-color.tools {
+  background: var(--accent-cyan);
+}
+
+.performance-page .stats-card .stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.performance-page .stats-card .stat-item:last-child {
+  border-bottom: none;
+}
+
+.performance-page .stats-card .stat-label {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.performance-page .stats-card .stat-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.performance-page .table-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.performance-page .table-card .ant-table {
+  background: transparent;
+}
+
+.performance-page .table-card .ant-table-thead > tr > th {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 500;
+}
+
+.performance-page .table-card .ant-table-tbody > tr > td {
+  background: transparent;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.performance-page .table-card .ant-table-tbody > tr:hover > td {
+  background: rgba(217, 119, 6, 0.05);
+}

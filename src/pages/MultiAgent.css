@@ -1,0 +1,203 @@
+/* Multi Agent Page 样式 - Claude Design */
+.multi-agent-page {
+  padding: 20px;
+}
+
+.multi-agent-page .stats-row {
+  margin-bottom: 20px;
+}
+
+.multi-agent-page .stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.multi-agent-page .stat-card .ant-statistic-title {
+  color: var(--text-muted);
+}
+
+.multi-agent-page .flow-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+}
+
+.multi-agent-page .flow-container {
+  height: 400px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+}
+
+.multi-agent-page .table-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+}
+
+.multi-agent-page .timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+/* Agent 节点样式 */
+.agent-node {
+  background: var(--bg-card);
+  border: 2px solid var(--accent-primary);
+  border-radius: var(--radius-lg);
+  min-width: 150px;
+  box-shadow: 0 4px 20px rgba(217, 119, 6, 0.2);
+}
+
+.agent-node-header {
+  padding: 10px 14px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(217, 119, 6, 0.1);
+}
+
+.agent-node-header .agent-name {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.agent-node-body {
+  padding: 14px;
+}
+
+.agent-node-body .agent-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.agent-node-body .agent-stats .stat {
+  text-align: center;
+}
+
+.agent-node-body .agent-stats .stat .label {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.agent-node-body .agent-stats .stat .value {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.agent-node-body .agent-metadata {
+  text-align: center;
+}
+
+/* 消息节点样式 */
+.message-node {
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  min-width: 120px;
+  max-width: 200px;
+}
+
+.message-node .message-type {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.message-node .message-content {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message-node .message-time {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* 时间线事件样式 */
+.timeline-event {
+  padding: 10px 0;
+}
+
+.timeline-event .event-agent {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.timeline-event .event-time {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.timeline-event .event-preview {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 10px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+/* React Flow 样式覆盖 */
+.react-flow__node {
+  cursor: pointer;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__controls {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.react-flow__controls-button {
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.react-flow__controls-button:hover {
+  background: var(--bg-elevated);
+  color: var(--accent-primary);
+}
+
+.react-flow__minimap {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.react-flow__attribution {
+  background: var(--bg-card);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.react-flow__attribution a {
+  color: var(--text-muted);
+}

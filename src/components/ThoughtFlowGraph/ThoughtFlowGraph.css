@@ -1,0 +1,301 @@
+/* 思考流程图样式 - Claude Design */
+.thought-flow-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.flow-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.flow-stats {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.flow-stats .ant-statistic-title {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.flow-stats .ant-statistic-content {
+  color: var(--text-primary);
+}
+
+.thought-flow-graph {
+  flex: 1;
+  background: var(--bg-primary);
+}
+
+.thought-flow-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 400px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.empty-hint {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* 思考节点样式 */
+.thought-node {
+  background: var(--bg-card);
+  border: 2px solid var(--accent-primary);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  min-width: 280px;
+  max-width: 350px;
+  box-shadow: 0 4px 20px rgba(217, 119, 6, 0.2);
+  transition: all 0.2s ease;
+}
+
+.thought-node:hover,
+.thought-node.selected {
+  box-shadow: 0 6px 30px rgba(217, 119, 6, 0.35);
+  transform: translateY(-2px);
+  border-color: var(--accent-primary-hover);
+}
+
+.thought-node .node-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 10px;
+}
+
+.thought-node .node-content {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 10px 0;
+}
+
+.thought-node .node-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.token-label {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* 工具节点样式 */
+.tool-node {
+  background: var(--bg-card);
+  border: 2px solid var(--accent-green);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  min-width: 280px;
+  max-width: 350px;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2);
+  transition: all 0.2s ease;
+}
+
+.tool-node:hover,
+.tool-node.selected {
+  box-shadow: 0 6px 30px rgba(34, 197, 94, 0.35);
+  transform: translateY(-2px);
+  border-color: #4ade80;
+}
+
+.tool-node .node-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 10px;
+}
+
+.tool-node .node-params {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+  max-height: 80px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.tool-node .node-params pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.tool-node .node-footer {
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* 开始节点样式 */
+.start-node {
+  background: var(--accent-gradient);
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(217, 119, 6, 0.4);
+}
+
+.start-content {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* 耗时样式 */
+.node-duration {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.node-duration.slow {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* ReactFlow 覆盖样式 */
+.react-flow__node {
+  cursor: pointer;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__controls {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.react-flow__controls-button {
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.react-flow__controls-button:hover {
+  background: var(--bg-elevated);
+  color: var(--accent-primary);
+}
+
+.react-flow__minimap {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+/* Handle 样式 */
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  background: var(--accent-primary);
+  border: 2px solid #fff;
+}
+
+/* 节点详情样式 */
+.node-detail {
+  padding: 20px 0;
+}
+
+.detail-content {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.detail-json {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  overflow-x: auto;
+  max-height: 400px;
+  border: 1px solid var(--border-color);
+}
+
+.detail-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--accent-red);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  color: var(--accent-red);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.text-warning {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* 搜索框样式 */
+.flow-toolbar .ant-input-search .ant-input {
+  background: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+}
+
+.flow-toolbar .ant-input-search .ant-input::placeholder {
+  color: var(--text-muted);
+}
+
+.flow-toolbar .ant-select-selector {
+  background: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary);
+  border-radius: var(--radius-md) !important;
+}

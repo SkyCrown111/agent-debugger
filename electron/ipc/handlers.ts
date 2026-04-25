@@ -1,4 +1,4 @@
-import { ipcMain } from 'electron';
+import { ipcMain, BrowserWindow } from 'electron';
 import { WebSocketServer } from '../services/WebSocketServer';
 import { StoreService } from '../services/StoreService';
 

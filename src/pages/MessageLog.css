@@ -1,12 +1,12 @@
-/* Message Log Page 样式 */
+/* Message Log Page 样式 - Claude Design */
 .message-log-page {
   animation: fadeIn 0.3s ease;
 }
 
 .log-card {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
 }
 
 .message-list {
@@ -15,48 +15,58 @@
 }
 
 .message-item {
-  padding: 12px;
-  margin-bottom: 8px;
-  border-radius: 6px;
-  background: #0d1117;
-  border-left: 3px solid #30363d;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  border-left: 3px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.message-item:hover {
+  background: var(--bg-elevated);
 }
 
 .message-item.thought {
-  border-left-color: #faad14;
+  border-left-color: var(--accent-primary);
 }
 
 .message-item.tool {
-  border-left-color: #1890ff;
+  border-left-color: var(--accent-cyan);
 }
 
 .message-item.token {
-  border-left-color: #52c41a;
+  border-left-color: var(--accent-green);
 }
 
 .message-item.error {
-  border-left-color: #ff4d4f;
+  border-left-color: var(--accent-red);
 }
 
 .message-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .message-header .category {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
-  color: #8b949e;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .message-header .time {
   font-size: 12px;
-  color: #6e7681;
+  color: var(--text-muted);
 }
 
 .message-content pre {
-  font-size: 11px;
+  font-size: 12px;
   max-height: 200px;
   overflow-y: auto;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
 }
